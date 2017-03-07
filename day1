@@ -1,12 +1,14 @@
 # Day1
 Assignments
-# Post your favourite >=3 Table join statement from Test database
+# Who sell the most products by how many of them?
 
-SELECT Customers.CustomerName, Orders.OrderID, Orders.EmployeeID, Customers.Address
-FROM Customers
-INNER JOIN Orders
-ON Customers.CustomerID=Orders.CustomerID
-ORDER BY Customers.CustomerName;
+SELECT OrderDetails.OrderID, OrderDetails.Quantity,Employees.EmployeeID,Employees.LastName,Employees.BirthDate
+FROM OrderDetails
+JOIN Orders
+ON OrderDetails.OrderID=Orders.OrderID
+JOIN Employees
+ON Orders.EmployeeID=Employees.EmployeeID
+ORDER BY Quantity DESC;
 
 Design	SQL	statement	to	create	two	tables	to	store
  – Mutations
